@@ -1,0 +1,8 @@
+.mdc-card {
+  flex-direction: row;
+  background: none;
+}
+
+.mat-body p {
+  margin: 0 0 0 !important;
+}

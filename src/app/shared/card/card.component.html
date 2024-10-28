@@ -1,0 +1,24 @@
+<mat-card class="max-w-96" appearance="outlined">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="bg-tertiary text-gray-400 flex items-center justify-center"
+    >
+      <mat-icon>person</mat-icon>
+    </div>
+    <mat-card-title class="text-sm">Fulano de tal</mat-card-title>
+    <mat-card-subtitle class="text-xs text-gray-600"
+      >Nome da empresa</mat-card-subtitle
+    >
+  </mat-card-header>
+
+  <mat-card-actions>
+    <button
+      class="flex bg-primary rounded p-2 text-white"
+      mat-button
+      (click)="openModal()"
+    >
+      <mat-icon class="mr-2">visibility</mat-icon> Visualizar
+    </button>
+  </mat-card-actions>
+</mat-card>
