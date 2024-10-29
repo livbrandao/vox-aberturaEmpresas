@@ -7,9 +7,10 @@
   </div>
   <button
     class="bg-primary text-white rounded p-2 flex items-center"
-    type="submit"
+    mat-raised-button
+    (click)="navigateToNewCompanies()"
+    *ngIf="exibirBotao"
   >
     <mat-icon class="mr-2">add_circle</mat-icon> Solicitar Abertura
   </button>
 </mat-toolbar>
-<app-empresa-lista class="p-4"></app-empresa-lista>
