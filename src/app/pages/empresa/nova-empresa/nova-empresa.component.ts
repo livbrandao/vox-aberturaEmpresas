@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { NovaEmpresaService } from "./nova-empresa.service";
 import { Empresa } from "../empresa.model";
-import { Router } from "@angular/router";
+import { MatDialog } from "@angular/material/dialog";
+import { ModalSucessComponent } from "src/app/shared/modal-sucess/modal-sucess.component";
 
 @Component({
   selector: "app-nova-empresa",
@@ -39,7 +40,7 @@ export class NovaEmpresaComponent implements OnInit {
 
   constructor(
     private _novaEmpresaService: NovaEmpresaService,
-    private _router: Router
+    private _dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -48,7 +49,7 @@ export class NovaEmpresaComponent implements OnInit {
 
   createCompany(): void {
     this._novaEmpresaService.create(this.company).subscribe(() => {
-      this._router.navigate(["/"]);
+      this._dialog.open(ModalSucessComponent);
     });
   }
 
