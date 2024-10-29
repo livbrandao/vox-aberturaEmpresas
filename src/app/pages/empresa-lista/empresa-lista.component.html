@@ -1,2 +1,27 @@
-<!-- app.component.html -->
-<app-card title="Fulano de tal" subtitle="Nome da Empresa"></app-card>
+<section class="flex p-10">
+  <div class="pl-10 w-[50%] flex flex-col gap-4">
+    <app-card
+      title="Fulano de tal"
+      subtitle="Nome da Empresa"
+      (viewDetails)="onViewDetails($event)"
+    ></app-card>
+    <app-card
+      title="Fulano de tal"
+      subtitle="Nome da Empresa"
+      (viewDetails)="onViewDetails($event)"
+    ></app-card>
+    <app-card
+      title="Fulano de tal"
+      subtitle="Nome da Empresa"
+      (viewDetails)="onViewDetails($event)"
+    ></app-card>
+  </div>
+  <div class="border-l border-primary w-[50%]">
+    <app-detail-card
+      *ngIf="selectedDetail"
+      [title]="selectedDetail?.title ?? ''"
+      [subtitle]="selectedDetail?.subtitle ?? ''"
+    >
+    </app-detail-card>
+  </div>
+</section>
