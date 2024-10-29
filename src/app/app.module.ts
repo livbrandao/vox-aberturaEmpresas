@@ -11,11 +11,18 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatDialogModule } from "@angular/material/dialog";
-import { EmpresaListaComponent } from "./pages/empresa-lista/empresa-lista.component";
+import { EmpresaListaComponent } from "./pages/empresa/empresa-lista/empresa-lista.component";
 import { CardComponent } from "./shared/card/card.component";
 import { DetailCardComponent } from "./shared/detail-card/detail-card.component";
 import { HeaderComponent } from "./components/header/header.component";
-import { NovaEmpresaComponent } from './pages/nova-empresa/nova-empresa.component';
+import { NovaEmpresaComponent } from "./pages/empresa/nova-empresa/nova-empresa.component";
+import { HttpClientModule } from "@angular/common/http";
+
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatRadioModule } from "@angular/material/radio";
+import { FormsModule } from "@angular/forms";
+import { StateSelectComponent } from "./shared/state-select/state-select.component";
 
 @NgModule({
   declarations: [
@@ -26,6 +33,7 @@ import { NovaEmpresaComponent } from './pages/nova-empresa/nova-empresa.componen
     DetailCardComponent,
     HeaderComponent,
     NovaEmpresaComponent,
+    StateSelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +44,11 @@ import { NovaEmpresaComponent } from './pages/nova-empresa/nova-empresa.componen
     MatCardModule,
     MatDialogModule,
     MatSidenavModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

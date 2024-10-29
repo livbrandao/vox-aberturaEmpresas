@@ -7,10 +7,10 @@ export interface Empresa {
   };
   empresa: {
     ds_nome_fantasia: string;
-    co_entidade_registro: number;
-    co_natureza_juridica: number;
+    co_entidade_registro: number | null;
+    co_natureza_juridica: number | null;
     endereco: {
-      co_cep: number;
+      co_cep: number | null;
       ds_logradouro: string;
       co_numero: string;
       ds_complemento: string | null;

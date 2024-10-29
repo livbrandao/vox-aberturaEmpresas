@@ -1,0 +1,153 @@
+<mat-card class="card p-16">
+  <form>
+    <section class="flex w-full justify-between">
+      <div class="flex w-[50%] flex-col border-r border-primary-light mr-24">
+        <mat-card-title class="font-bold text-gray-500 pb-4"
+          >Dados do Solicitante</mat-card-title
+        >
+        <mat-label class="font-bold text-gray-600"
+          >Responsável pela empresa*</mat-label
+        >
+        <mat-form-field appearance="outline" floatLabel="always">
+          <input
+            matInput
+            required
+            [(ngModel)]="company.solicitante.ds_responsavel"
+            name="ds_responsavel"
+          />
+        </mat-form-field>
+
+        <mat-label class="font-bold text-gray-600">CPF*</mat-label>
+        <mat-form-field appearance="outline" floatLabel="always">
+          <input
+            matInput
+            required
+            placeholder="999.999.999-99"
+            [(ngModel)]="company.solicitante.nu_cpf"
+            name="nu_cpf"
+          />
+        </mat-form-field>
+
+        <mat-label class="font-bold text-gray-600"
+          >Data de nascimento*</mat-label
+        >
+        <mat-form-field
+          appearance="outline"
+          floatLabel="always"
+          class="max-w-96"
+        >
+          <input
+            matInput
+            required
+            placeholder="DD/MM/AAAA"
+            [(ngModel)]="company.solicitante.date_nascimento"
+            name="date_nascimento"
+          />
+        </mat-form-field>
+
+        <mat-card-title class="font-bold text-gray-500 pb-4"
+          >Dados da empresa</mat-card-title
+        >
+
+        <mat-label class="font-bold text-gray-600">Nome fantasia*</mat-label>
+        <mat-form-field appearance="outline" floatLabel="always">
+          <input
+            matInput
+            required
+            [(ngModel)]="company.empresa.ds_nome_fantasia"
+            name="ds_nome_fantasia"
+          />
+        </mat-form-field>
+
+        <mat-label class="font-bold text-gray-600"
+          >Escolha sua entidade de registro*</mat-label
+        >
+        <mat-radio-group
+          [(ngModel)]="company.empresa.co_entidade_registro"
+          name="radioGroup"
+          (change)="logSelectedValue()"
+          class="flex flex-col"
+          name="co_entidade_registro"
+        >
+          <mat-radio-button
+            *ngFor="let option of optionsEntidades"
+            [value]="option.key"
+            name="key"
+            >{{ option.value }}</mat-radio-button
+          >
+        </mat-radio-group>
+      </div>
+      <div class="flex flex-col w-[50%]">
+        <mat-card-title class="font-bold text-gray-500 pb-4"
+          >Endereço da empresa</mat-card-title
+        >
+
+        <mat-label class="font-bold text-gray-600">CEP*</mat-label>
+        <mat-form-field appearance="outline" floatLabel="always">
+          <input
+            matInput
+            required
+            placeholder="99999-999"
+            [(ngModel)]="company.empresa.endereco.co_cep"
+            name="endereco.co_cep"
+          />
+        </mat-form-field>
+
+        <mat-label class="font-bold text-gray-600">Endereço*</mat-label>
+        <mat-form-field appearance="outline" floatLabel="always">
+          <input
+            matInput
+            required
+            [(ngModel)]="company.empresa.endereco.ds_logradouro"
+            name="ds_logradouro"
+          />
+        </mat-form-field>
+
+        <mat-label class="font-bold text-gray-600">Bairro*</mat-label>
+        <mat-form-field appearance="outline" floatLabel="always">
+          <input
+            matInput
+            required
+            [(ngModel)]="company.empresa.endereco.ds_bairro"
+            name="endereco.ds_bairro"
+          />
+        </mat-form-field>
+
+        <mat-label class="font-bold text-gray-600">Complemento*</mat-label>
+        <mat-form-field appearance="outline" floatLabel="always">
+          <input
+            matInput
+            required
+            [(ngModel)]="company.empresa.endereco.ds_complemento"
+            name="ds_complemento"
+          />
+        </mat-form-field>
+
+        <mat-label class="font-bold text-gray-600">Cidade*</mat-label>
+        <mat-form-field appearance="outline" floatLabel="always">
+          <input
+            matInput
+            required
+            [(ngModel)]="company.empresa.endereco.ds_municipio"
+            name="ds_municipio"
+          />
+        </mat-form-field>
+
+        <mat-label class="font-bold text-gray-600">Estado*</mat-label>
+        <app-state-select
+          [(ngModel)]="company.empresa.endereco.co_uf"
+          name="endereco.co_uf"
+        ></app-state-select>
+
+        <button
+          mat-raised-button
+          (click)="createCompany()"
+          class="bg-primary-light flex justify-center p-2 w-28 text-tertiary-light ml-48 rounded items-center m-auto"
+        >
+          <mat-icon class="-rotate-45 transform mr-2">send</mat-icon>
+          Enviar
+        </button>
+      </div>
+    </section>
+  </form>
+</mat-card>
