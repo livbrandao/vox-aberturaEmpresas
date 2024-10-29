@@ -1,7 +1,70 @@
 <!-- detail-card.component.html -->
 <mat-card class="detail-card">
-  <mat-card-title>{{ title }}</mat-card-title>
-  <mat-card-subtitle class="text-xs text-gray-600">{{
-    subtitle
-  }}</mat-card-subtitle>
+  <div class="flex items-center mb-10">
+    <mat-card-title class="text-tertiary-dark font-semibold">
+      Detalhes do pedido
+    </mat-card-title>
+
+    <button
+      mat-raised-button
+      class="bg-tertiary-dark flex justify-center p-2 w-28 text-tertiary-light ml-48 rounded items-center m-auto"
+    >
+      <mat-icon class="mr-2">person_edit</mat-icon>
+      Editar
+    </button>
+  </div>
+  <div class="flex items-center">
+    <div
+      mat-card-avatar
+      class="bg-tertiary-medium text-gray-400 flex items-center justify-center mr-4"
+    >
+      <mat-icon>person</mat-icon>
+    </div>
+    <mat-card-title class="text-base">{{ ds_nome_fantasia }}</mat-card-title>
+  </div>
+  <div class="mt-4 flex flex-col gap-1 text-base">
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >Responsável:
+      <span class="font-normal ml-4">{{
+        ds_responsavel
+      }}</span></mat-card-subtitle
+    >
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >CPF:
+      <span class="font-normal ml-4">{{ nu_cpf }}</span></mat-card-subtitle
+    >
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >Endereço:
+      <span class="font-normal ml-4">{{
+        ds_logradouro
+      }}</span></mat-card-subtitle
+    >
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >Bairro:
+      <span class="font-normal ml-4">{{ ds_bairro }}</span></mat-card-subtitle
+    >
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >Cidade:
+      <span class="font-normal ml-4">{{
+        ds_municipio
+      }}</span></mat-card-subtitle
+    >
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >CEP:
+      <span class="font-normal ml-4">{{ co_cep }}</span></mat-card-subtitle
+    >
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >Complemento:
+      <span class="font-normal ml-4">{{
+        ds_complemento
+      }}</span></mat-card-subtitle
+    >
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >UF: <span class="font-normal ml-4">{{ co_uf }}</span></mat-card-subtitle
+    >
+    <mat-card-subtitle class="text-primary-dark font-bold"
+      >Número:
+      <span class="font-normal ml-4">{{ co_numero }}</span></mat-card-subtitle
+    >
+  </div>
 </mat-card>

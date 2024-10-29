@@ -1,18 +1,31 @@
 <section class="flex p-10">
-  <div class="pl-10 w-[50%] flex flex-col gap-4">
+  <div class="pl-10 flex flex-col gap-4">
     <div *ngFor="let card of empresaData">
       <app-card
-        [subtitle]="card.empresa.ds_nome_fantasia"
-        [title]="card.solicitante.ds_responsavel"
-        (viewDetails)="onViewDetails($event)"
+        [ds_nome_fantasia]="card.empresa.ds_nome_fantasia"
+        [ds_responsavel]="card.solicitante.ds_responsavel"
+        (click)="onViewDetails(card)"
       ></app-card>
     </div>
   </div>
-  <div class="border-l border-primary-light w-[50%]">
+  <div class="flex flex-col items-center justify-center mx-24">
+    <div class="border-l-2 border-primary-light h-[50%] m-4"></div>
+    <mat-icon class="text-primary-light">keyboard_arrow_right</mat-icon>
+    <div class="border-l-2 border-primary-light h-[50%] mt-4"></div>
+  </div>
+  <div>
     <app-detail-card
       *ngIf="selectedDetail"
-      [title]="selectedDetail?.title ?? ''"
-      [subtitle]="selectedDetail?.subtitle ?? ''"
+      [ds_nome_fantasia]="selectedDetail?.ds_nome_fantasia ?? ''"
+      [ds_responsavel]="selectedDetail?.ds_responsavel ?? ''"
+      [nu_cpf]="selectedDetail?.nu_cpf ?? ''"
+      [ds_logradouro]="selectedDetail?.ds_logradouro ?? ''"
+      [ds_bairro]="selectedDetail?.ds_bairro ?? ''"
+      [ds_municipio]="selectedDetail?.ds_municipio ?? ''"
+      [co_cep]="selectedDetail?.co_cep || 0"
+      [ds_complemento]="selectedDetail?.ds_complemento ?? ''"
+      [co_uf]="selectedDetail?.co_uf ?? ''"
+      [co_numero]="selectedDetail?.co_numero ?? ''"
     >
     </app-detail-card>
   </div>

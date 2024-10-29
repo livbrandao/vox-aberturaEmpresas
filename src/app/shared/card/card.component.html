@@ -2,19 +2,19 @@
   <mat-card-header>
     <div
       mat-card-avatar
-      class="bg-tertiary text-gray-400 flex items-center justify-center"
+      class="bg-tertiary-medium text-gray-400 flex items-center justify-center"
     >
       <mat-icon>person</mat-icon>
     </div>
-    <mat-card-title class="text-sm"> {{ title }}</mat-card-title>
+    <mat-card-title class="text-sm"> {{ ds_responsavel }}</mat-card-title>
     <mat-card-subtitle class="text-xs text-gray-600">{{
-      subtitle
+      ds_nome_fantasia
     }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-actions>
     <button
-      class="flex bg-primary rounded p-2 text-white"
+      class="flex bg-primary-light rounded p-2 text-white"
       mat-button
       (click)="showDetails()"
     >
