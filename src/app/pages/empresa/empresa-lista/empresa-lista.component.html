@@ -1,0 +1,19 @@
+<section class="flex p-10">
+  <div class="pl-10 w-[50%] flex flex-col gap-4">
+    <div *ngFor="let card of empresaData">
+      <app-card
+        [subtitle]="card.empresa.ds_nome_fantasia"
+        [title]="card.solicitante.ds_responsavel"
+        (viewDetails)="onViewDetails($event)"
+      ></app-card>
+    </div>
+  </div>
+  <div class="border-l border-primary w-[50%]">
+    <app-detail-card
+      *ngIf="selectedDetail"
+      [title]="selectedDetail?.title ?? ''"
+      [subtitle]="selectedDetail?.subtitle ?? ''"
+    >
+    </app-detail-card>
+  </div>
+</section>

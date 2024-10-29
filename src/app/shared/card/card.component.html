@@ -1,4 +1,4 @@
-<mat-card class="max-w-96" appearance="outlined">
+<mat-card class="w-[28rem] flex justify-between" appearance="outlined">
   <mat-card-header>
     <div
       mat-card-avatar
@@ -6,10 +6,10 @@
     >
       <mat-icon>person</mat-icon>
     </div>
-    <mat-card-title class="text-sm">Fulano de tal</mat-card-title>
-    <mat-card-subtitle class="text-xs text-gray-600"
-      >Nome da empresa</mat-card-subtitle
-    >
+    <mat-card-title class="text-sm"> {{ title }}</mat-card-title>
+    <mat-card-subtitle class="text-xs text-gray-600">{{
+      subtitle
+    }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-actions>
