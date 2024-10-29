@@ -23,6 +23,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatRadioModule } from "@angular/material/radio";
 import { FormsModule } from "@angular/forms";
 import { StateSelectComponent } from "./shared/state-select/state-select.component";
+import { ModalSucessComponent } from "./shared/modal-sucess/modal-sucess.component";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { StateSelectComponent } from "./shared/state-select/state-select.compone
     HeaderComponent,
     NovaEmpresaComponent,
     StateSelectComponent,
+    ModalSucessComponent,
   ],
   imports: [
     BrowserModule,

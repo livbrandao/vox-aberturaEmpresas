@@ -1,0 +1,16 @@
+<section>
+  <mat-dialog-actions>
+    <button
+      mat-button
+      mat-dialog-close
+      class="flex justify-end w-full text-tertiary-dark"
+      (click)="closeAndRedirect()"
+    >
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-dialog-actions>
+  <div class="flex flex-col items-center px-16 pt-16 pb-24">
+    <mat-icon class="custom-size">check_circle_outline</mat-icon>
+    <mat-dialog-content>Solicitação cadastrada com sucesso</mat-dialog-content>
+  </div>
+</section>
