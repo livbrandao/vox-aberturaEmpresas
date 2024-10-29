@@ -1,0 +1,10 @@
+/* detail-card.component.css */
+.detail-card {
+  max-width: 400px;
+  margin-left: 20px;
+  background: none;
+}
+
+.mat-mdc-card {
+  box-shadow: none;
+}

@@ -1,6 +1,4 @@
-import { Component, Input } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
-import { DetalhesComponent } from "src/app/modals/detalhes/detalhes.component";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "app-card",
@@ -11,17 +9,15 @@ export class CardComponent {
   @Input() title: string = "";
   @Input() subtitle: string = "";
 
-  constructor(public dialog: MatDialog) {}
+  @Output() viewDetails = new EventEmitter<{
+    title: string;
+    subtitle: string;
+  }>();
 
-  openModal(): void {
-    this.dialog.open(DetalhesComponent, {
-      width: "400px",
-      height: "300px",
-      data: {
-        title: this.title,
-      },
-      disableClose: true,
-      panelClass: "custom-modalbox",
+  showDetails(): void {
+    this.viewDetails.emit({
+      title: this.title,
+      subtitle: this.subtitle,
     });
   }
 }
