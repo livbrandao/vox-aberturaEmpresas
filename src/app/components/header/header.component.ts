@@ -18,10 +18,13 @@ export class HeaderComponent {
       if (event instanceof NavigationEnd) {
         if (this.router.url.includes("/new")) {
           this.title = "Solicitar Abertura da empresa";
+        } else if (this.router.url.includes("/edit")) {
+          this.title = "Pedidos de edição da empresa";
         }
       }
 
-      this.exibirBotao = !this.router.url.includes("/new");
+      this.exibirBotao =
+        !this.router.url.includes("/new") && !this.router.url.includes("/edit");
     });
   }
 
