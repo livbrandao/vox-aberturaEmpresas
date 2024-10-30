@@ -1,27 +1,85 @@
 # VoxAberturaEmpresas
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+## 📚 ESTRUTURA DO PROJETO
 
-## Development server
+A estrutura do projeto é organizada em várias pastas que contêm componentes, serviços, modelos e páginas. Abaixo está a organização básica do projeto:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+/vox-aberturaEmpresas
+├── /src
+│ ├── /app
+│ │ ├── /components # Componentes reutilizáveis
+│ │ ├── /pages # Páginas da aplicação
+│ │ ├── /services # Serviços para chamadas API
+│ │ ├── /models # Modelos de dados
+│ │ ├── /shared # Componentes compartilhados (e.g., modais)
+│ │ ├── app-routing.module.ts # Módulo de rotas
+│ │ ├── app.module.ts # Módulo principal da aplicação
+│ │ └── main.ts # Ponto de entrada da aplicação
+│ ├── /assets # Recursos estáticos (imagens, ícones, etc.)
+│ ├── index.html # Arquivo HTML principal
+│ ├── styles.css # Estilos globais
+│ └── environments # Configurações de ambiente
+├── /mocks # Dados mockados para desenvolvimento
+├── angular.json # Configurações do Angular
+├── package.json # Dependências do projeto
+└── README.md # Documentação do projeto
 
-## Code scaffolding
+## Principais Funções
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1. Componentes
 
-## Build
+- **app-card**: Componente para exibir as informações básicas de uma empresa.
+- **app-detail-card**: Componente para mostrar os detalhes da empresa selecionada.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 2. Serviços
 
-## Running unit tests
+- **EmpresaService**: Serviço responsável por realizar chamadas à API e manipular dados relacionados às empresas. Inclui métodos como:
+  - `getEmpresasData()`: Retorna a lista de empresas.
+  - `getCompanyById(id: string)`: Retorna os dados de uma empresa específica.
+  - `updateCompany(company: Empresa)`: Atualiza os dados de uma empresa.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 3. Páginas
 
-## Running end-to-end tests
+- **EmpresaListaComponent**: Componente que lista todas as empresas e permite a visualização dos detalhes de cada uma.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 4. Modelos
 
-## Further help
+- **Empresa**: Define a estrutura dos dados da empresa, incluindo informações do solicitante e detalhes da empresa.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 💻 COMANDOS DE EXECUÇÃO
+
+### Pré-requisitos
+
+- Certifique-se de que você tenha o Node.js e o Angular CLI instalados.
+
+### 1. Clonar o Repositório
+
+````bash
+`git clone https://github.com/livbrandao/vox-aberturaEmpresas.git`
+cd vox-aberturaEmpresas
+
+### 2. Instalar Dependências
+```bash
+- Execute o seguinte comando para instalar as dependências do projeto:
+`npm install`
+
+### 3. Executar o Servidor de Desenvolvimento
+```bash
+- Para iniciar o servidor de desenvolvimento, use o comando:
+`npm start`
+
+- A aplicação estará disponível em `http://localhost:4200`.
+
+### 4. Acessar a API Mock
+- Se você estiver usando um arquivo db.json para simular a API, você pode usar o JSON Server para servir esses dados. Instale o JSON Server, se ainda não o tiver feito usando o seguinte comando:
+`npm install -g json-server`
+
+- Em seguida, inicie o servidor JSON:
+`json-server --watch mocks/db.json --port 3000`
+
+- A API estará disponível em http://localhost:3000.
+
+````
+
+🧑‍💻 Autor(a)
+Lívia Brandão.
