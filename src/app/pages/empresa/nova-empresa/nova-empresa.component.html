@@ -5,6 +5,7 @@
         <mat-card-title class="font-bold text-gray-500 pb-4"
           >Dados do Solicitante</mat-card-title
         >
+
         <mat-label class="font-bold text-gray-600"
           >Responsável pela empresa*</mat-label
         >
@@ -64,18 +65,22 @@
         >
         <mat-radio-group
           [(ngModel)]="company.empresa.co_entidade_registro"
-          name="radioGroup"
+          name="co_entidade_registro"
           (change)="logSelectedValue()"
           class="flex flex-col"
-          name="co_entidade_registro"
+          required
         >
           <mat-radio-button
             *ngFor="let option of optionsEntidades"
             [value]="option.key"
-            name="key"
-            >{{ option.value }}</mat-radio-button
           >
+            {{ option.value }}
+          </mat-radio-button>
         </mat-radio-group>
+
+        <mat-error *ngIf="submitted && !company.empresa.co_entidade_registro">
+          Por favor, selecione uma opção.</mat-error
+        >
       </div>
       <div class="flex flex-col w-[50%]">
         <mat-card-title class="font-bold text-gray-500 pb-4"
@@ -138,6 +143,9 @@
           [(ngModel)]="company.empresa.endereco.co_uf"
           name="endereco.co_uf"
         ></app-state-select>
+        <mat-error *ngIf="submitted && !company.empresa.co_entidade_registro">
+          Por favor, selecione uma opção.</mat-error
+        >
 
         <button
           mat-raised-button

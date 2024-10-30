@@ -24,6 +24,7 @@ import { MatRadioModule } from "@angular/material/radio";
 import { FormsModule } from "@angular/forms";
 import { StateSelectComponent } from "./shared/state-select/state-select.component";
 import { ModalSucessComponent } from "./shared/modal-sucess/modal-sucess.component";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ModalSucessComponent } from "./shared/modal-sucess/modal-sucess.compone
     MatInputModule,
     FormsModule,
     MatRadioModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
