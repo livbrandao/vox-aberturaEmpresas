@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { NovaEmpresaService } from "./nova-empresa.service";
 import { Empresa } from "../empresa.model";
 import { MatDialog } from "@angular/material/dialog";
 import { ModalSucessComponent } from "src/app/shared/modal-sucess/modal-sucess.component";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import { ActivatedRoute } from "@angular/router";
+import { EmpresaService } from "../empresa.service";
 
 @Component({
   selector: "app-nova-empresa",
@@ -37,17 +38,16 @@ export class NovaEmpresaComponent implements OnInit {
     },
   };
 
-  selectedValue: string = "";
-
   optionsEntidades: any[] = [];
 
   submitted: boolean = false;
 
   constructor(
-    private _novaEmpresaService: NovaEmpresaService,
+    private _novaEmpresaService: EmpresaService,
     private _dialog: MatDialog,
     private _formsValidator: FormBuilder,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _route: ActivatedRoute
   ) {
     this.companyForm = this._formsValidator.group({
       ds_responsavel: ["", Validators.required],
@@ -97,10 +97,6 @@ export class NovaEmpresaComponent implements OnInit {
       horizontalPosition: "right",
       verticalPosition: "top",
     });
-  }
-
-  logSelectedValue(): void {
-    console.log(this.selectedValue);
   }
 
   loadOptionsEntidades() {

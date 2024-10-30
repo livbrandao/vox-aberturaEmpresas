@@ -66,7 +66,6 @@
         <mat-radio-group
           [(ngModel)]="company.empresa.co_entidade_registro"
           name="co_entidade_registro"
-          (change)="logSelectedValue()"
           class="flex flex-col"
           required
         >
@@ -143,14 +142,16 @@
           [(ngModel)]="company.empresa.endereco.co_uf"
           name="endereco.co_uf"
         ></app-state-select>
-        <mat-error *ngIf="submitted && !company.empresa.co_entidade_registro">
+        <mat-error
+          *ngIf="submitted && !companyForm.get('endereco.co_uf')?.value"
+        >
           Por favor, selecione uma opção.</mat-error
         >
 
         <button
           mat-raised-button
           (click)="createCompany()"
-          class="bg-primary-light flex justify-center p-2 w-28 text-tertiary-light ml-48 rounded items-center m-auto"
+          class="bg-primary-light flex justify-center p-2 w-28 text-tertiary-light ml-48 rounded items-center m-auto hover:bg-primary-medium"
         >
           <mat-icon class="-rotate-45 transform mr-2">send</mat-icon>
           Enviar
