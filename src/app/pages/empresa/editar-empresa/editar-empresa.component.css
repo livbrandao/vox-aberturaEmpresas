@@ -1,0 +1,23 @@
+.mat-mdc-card {
+  background: none !important;
+  box-shadow: none;
+  display: flex;
+}
+
+.mdc-notched-outline {
+  width: 50% !important;
+  height: 70% !important;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.rotate-on-hover {
+  transition: transform 0.5s ease;
+}
+
+.rotate-on-hover:hover {
+  transform: rotate(200deg);
+}

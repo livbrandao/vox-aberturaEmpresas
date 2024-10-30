@@ -21,10 +21,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatRadioModule } from "@angular/material/radio";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { StateSelectComponent } from "./shared/state-select/state-select.component";
 import { ModalSucessComponent } from "./shared/modal-sucess/modal-sucess.component";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { EditarEmpresaComponent } from "./pages/empresa/editar-empresa/editar-empresa.component";
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     NovaEmpresaComponent,
     StateSelectComponent,
     ModalSucessComponent,
+    EditarEmpresaComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
     FormsModule,
     MatRadioModule,
     MatSnackBarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

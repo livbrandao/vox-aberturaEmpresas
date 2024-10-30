@@ -6,6 +6,7 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./detail-card.component.css"],
 })
 export class DetailCardComponent {
+  @Input() id: string = "";
   @Input() ds_nome_fantasia: string = "";
   @Input() ds_responsavel: string = "";
   @Input() nu_cpf: string = "";

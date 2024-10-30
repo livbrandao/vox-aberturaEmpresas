@@ -1,5 +1,5 @@
 export interface Empresa {
-  id?: number;
+  id?: string;
   solicitante: {
     ds_responsavel: string;
     nu_cpf: string;

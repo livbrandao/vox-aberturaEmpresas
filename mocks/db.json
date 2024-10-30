@@ -53,13 +53,13 @@
       },
       "empresa": {
         "ds_nome_fantasia": "Maira & Maria",
-        "co_entidade_registro": 140600,
+        "co_entidade_registro": 104308,
         "co_natureza_juridica": 10021,
         "endereco": {
           "co_cep": 14022094,
           "ds_logradouro": "Rua Brandao",
           "co_numero": "244",
-          "ds_complemento": null,
+          "ds_complemento": "testando",
           "ds_bairro": "Serra azul",
           "ds_municipio": "Brasilia",
           "co_uf": "45"

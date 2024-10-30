@@ -7,7 +7,8 @@
 
     <button
       mat-raised-button
-      class="bg-tertiary-dark flex justify-center p-2 w-28 text-tertiary-light ml-48 rounded items-center m-auto"
+      class="bg-tertiary-dark flex justify-center p-2 w-28 text-tertiary-light ml-48 rounded items-center m-auto hover:bg-secondary-medium"
+      [routerLink]="['/edit', id]"
     >
       <mat-icon class="mr-2">person_edit</mat-icon>
       Editar
