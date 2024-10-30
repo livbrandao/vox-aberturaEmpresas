@@ -1,8 +1,8 @@
 <mat-card class="card p-16">
   <form>
     <section class="flex w-full justify-between">
-      <div class="flex w-[50%] flex-col border-r border-primary-light mr-24">
-        <mat-card-title class="font-bold text-gray-500 pb-4"
+      <div class="flex w-[50%] flex-col border-r-2 border-primary-light mr-24">
+        <mat-card-title class="font-bold text-secondary-dark pb-4"
           >Dados do Solicitante</mat-card-title
         >
 
@@ -24,29 +24,34 @@
             matInput
             required
             placeholder="999.999.999-99"
+            maxlength="14"
             [(ngModel)]="company.solicitante.nu_cpf"
             name="nu_cpf"
+            class="placeholder:text-secondary-medium"
           />
         </mat-form-field>
 
         <mat-label class="font-bold text-gray-600"
           >Data de nascimento*</mat-label
         >
-        <mat-form-field
-          appearance="outline"
-          floatLabel="always"
-          class="max-w-96"
-        >
+        <mat-form-field appearance="fill" floatLabel="always" class="w-[45%]">
           <input
             matInput
+            [matDatepicker]="picker"
             required
             placeholder="DD/MM/AAAA"
             [(ngModel)]="company.solicitante.date_nascimento"
-            name="date_nascimento"
+            formControlName="date_nascimento"
+            class="cursor-pointer"
           />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-        <mat-card-title class="font-bold text-gray-500 pb-4"
+        <mat-card-title class="font-bold text-secondary-dark pb-4"
           >Dados da empresa</mat-card-title
         >
 
@@ -82,7 +87,7 @@
         >
       </div>
       <div class="flex flex-col w-[50%]">
-        <mat-card-title class="font-bold text-gray-500 pb-4"
+        <mat-card-title class="font-bold text-secondary-dark pb-4"
           >Endereço da empresa</mat-card-title
         >
 
@@ -94,6 +99,7 @@
             placeholder="99999-999"
             [(ngModel)]="company.empresa.endereco.co_cep"
             name="endereco.co_cep"
+            maxlength="9"
           />
         </mat-form-field>
 
@@ -151,7 +157,7 @@
         <button
           mat-raised-button
           (click)="createCompany()"
-          class="bg-primary-light flex justify-center p-2 w-28 text-tertiary-light ml-48 rounded items-center m-auto hover:bg-primary-medium"
+          class="bg-primary-light flex justify-center p-2 w-28 text-tertiary-light ml-[17rem] rounded items-center m-auto hover:bg-primary-medium"
         >
           <mat-icon class="-rotate-45 transform mr-2">send</mat-icon>
           Enviar

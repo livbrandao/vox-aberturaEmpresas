@@ -4,7 +4,6 @@ import { MatDialog } from "@angular/material/dialog";
 import { ModalSucessComponent } from "src/app/shared/modal-sucess/modal-sucess.component";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { ActivatedRoute } from "@angular/router";
 import { EmpresaService } from "../empresa.service";
 
 @Component({
@@ -46,8 +45,7 @@ export class NovaEmpresaComponent implements OnInit {
     private _novaEmpresaService: EmpresaService,
     private _dialog: MatDialog,
     private _formsValidator: FormBuilder,
-    private _snackBar: MatSnackBar,
-    private _route: ActivatedRoute
+    private _snackBar: MatSnackBar
   ) {
     this.companyForm = this._formsValidator.group({
       ds_responsavel: ["", Validators.required],
@@ -56,7 +54,7 @@ export class NovaEmpresaComponent implements OnInit {
       ds_nome_fantasia: ["", Validators.required],
       co_entidade_registro: [null, Validators.required],
       co_natureza_juridica: [null, Validators.required],
-      co_cep: [null, [Validators.required, Validators.pattern(/^\d{8}$/)]],
+      co_cep: [null, [Validators.required, Validators.pattern(/^\d{9}$/)]],
       ds_logradouro: ["", Validators.required],
       co_numero: ["", Validators.required],
       ds_complemento: [null],
