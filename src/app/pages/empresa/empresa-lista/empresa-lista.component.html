@@ -4,7 +4,7 @@
       <app-card
         [ds_nome_fantasia]="card.empresa.ds_nome_fantasia"
         [ds_responsavel]="card.solicitante.ds_responsavel"
-        (click)="onViewDetails(card)"
+        (click)="onViewDetails(card.id)"
       ></app-card>
     </div>
   </div>
@@ -16,17 +16,17 @@
   <div>
     <app-detail-card
       *ngIf="selectedDetail"
-      [id]="selectedDetail?.id ?? ''"
-      [ds_nome_fantasia]="selectedDetail?.ds_nome_fantasia ?? ''"
-      [ds_responsavel]="selectedDetail?.ds_responsavel ?? ''"
-      [nu_cpf]="selectedDetail?.nu_cpf ?? ''"
-      [ds_logradouro]="selectedDetail?.ds_logradouro ?? ''"
-      [ds_bairro]="selectedDetail?.ds_bairro ?? ''"
-      [ds_municipio]="selectedDetail?.ds_municipio ?? ''"
-      [co_cep]="selectedDetail?.co_cep || 0"
-      [ds_complemento]="selectedDetail?.ds_complemento ?? ''"
-      [co_uf]="selectedDetail?.co_uf ?? ''"
-      [co_numero]="selectedDetail?.co_numero ?? ''"
+      [id]="selectedDetail.id ?? ''"
+      [ds_nome_fantasia]="selectedDetail.empresa?.ds_nome_fantasia ?? ''"
+      [ds_responsavel]="selectedDetail.solicitante?.ds_responsavel ?? ''"
+      [nu_cpf]="selectedDetail.solicitante?.nu_cpf ?? ''"
+      [ds_logradouro]="selectedDetail.empresa?.endereco?.ds_logradouro ?? ''"
+      [ds_bairro]="selectedDetail.empresa?.endereco?.ds_bairro ?? ''"
+      [ds_municipio]="selectedDetail.empresa?.endereco?.ds_municipio ?? ''"
+      [co_cep]="selectedDetail.empresa?.endereco?.co_cep || 0"
+      [ds_complemento]="selectedDetail.empresa?.endereco?.ds_complemento ?? ''"
+      [co_uf]="selectedDetail.empresa?.endereco?.co_uf ?? ''"
+      [co_numero]="selectedDetail.empresa?.endereco?.co_numero ?? ''"
     >
     </app-detail-card>
   </div>
