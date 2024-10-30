@@ -11,7 +11,7 @@ O sistema foi construído utilizando Angular e possui as seguintes funcionalidad
 - **Validação de Formulário**: Implementação de validações para garantir que os dados inseridos estão corretos antes do envio.
 - **Interação com dados mockados**: Utilização de um arquivo `db.json` na pasta `mocks` para simular a persistência de dados e facilitar o desenvolvimento.
 
-## Funcionalidades Não Implementadas
+## ✖️ Funcionalidades Não Implementadas
 
 Apesar de a aplicação já fornecer funcionalidades básicas, algumas melhorias e recursos adicionais não foram implementados:
 
@@ -20,7 +20,7 @@ Apesar de a aplicação já fornecer funcionalidades básicas, algumas melhorias
 - **Estilização e Responsividade**: Embora tenha sido feita uma estilização básica, a aplicação poderia se beneficiar de um design mais elaborado e responsivo.
 - **Testes Automatizados**: A aplicação carece de testes automatizados, o que ajudaria a garantir a qualidade do código e a funcionalidade do sistema.
 
-## Possíveis Melhorias
+## 🔄️ Possíveis Melhorias
 
 Para aprimorar ainda mais o projeto, as seguintes melhorias podem ser consideradas:
 
@@ -46,7 +46,7 @@ A estrutura do projeto é organizada em várias pastas que contêm componentes, 
 ──────── package.json # Dependências do projeto
 ──────── README.md # Documentação do projeto
 
-## Principais Funções
+## 📖 Principais Funções
 
 1. Componentes
 
