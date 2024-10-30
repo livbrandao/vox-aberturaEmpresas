@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { Empresa } from "../empresa.model";
 import { MatDialog } from "@angular/material/dialog";
 import { ModalSucessComponent } from "src/app/shared/modal-sucess/modal-sucess.component";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { EmpresaService } from "../empresa.service";
 
@@ -13,8 +12,6 @@ import { EmpresaService } from "../empresa.service";
   encapsulation: ViewEncapsulation.None,
 })
 export class NovaEmpresaComponent implements OnInit {
-  companyForm: FormGroup;
-
   company: Empresa = {
     solicitante: {
       ds_responsavel: "",
@@ -44,25 +41,8 @@ export class NovaEmpresaComponent implements OnInit {
   constructor(
     private _novaEmpresaService: EmpresaService,
     private _dialog: MatDialog,
-    private _formsValidator: FormBuilder,
     private _snackBar: MatSnackBar
-  ) {
-    this.companyForm = this._formsValidator.group({
-      ds_responsavel: ["", Validators.required],
-      nu_cpf: ["", [Validators.required, Validators.pattern(/^\d{11}$/)]],
-      date_nascimento: ["", Validators.required],
-      ds_nome_fantasia: ["", Validators.required],
-      co_entidade_registro: [null, Validators.required],
-      co_natureza_juridica: [null, Validators.required],
-      co_cep: [null, [Validators.required, Validators.pattern(/^\d{9}$/)]],
-      ds_logradouro: ["", Validators.required],
-      co_numero: ["", Validators.required],
-      ds_complemento: [null],
-      ds_bairro: ["", Validators.required],
-      ds_municipio: ["", Validators.required],
-      co_uf: ["", Validators.required],
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
     this.loadOptionsEntidades();
@@ -72,11 +52,7 @@ export class NovaEmpresaComponent implements OnInit {
     this.submitted = true;
 
     try {
-      if (this.companyForm.invalid) {
-        throw new Error("Por favor, preencha todos os campos obrigatórios.");
-      }
-
-      this._novaEmpresaService.create(this.companyForm.value).subscribe(() => {
+      this._novaEmpresaService.create(this.company).subscribe(() => {
         this._dialog.open(ModalSucessComponent);
         this.submitted = false;
       });

@@ -82,8 +82,6 @@
           </mat-radio-button>
         </mat-radio-group>
 
-        <mat-error *ngIf="submitted && !company.empresa.co_entidade_registro">
-          Por favor, selecione uma opção.</mat-error
         >
       </div>
       <div class="flex flex-col w-[50%]">
@@ -148,11 +146,6 @@
           [(ngModel)]="company.empresa.endereco.co_uf"
           name="endereco.co_uf"
         ></app-state-select>
-        <mat-error
-          *ngIf="submitted && !companyForm.get('endereco.co_uf')?.value"
-        >
-          Por favor, selecione uma opção.</mat-error
-        >
 
         <button
           mat-raised-button
