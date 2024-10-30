@@ -1,11 +1,11 @@
 <select
   [(ngModel)]="selectedState"
-  (change)="logSelectedState()"
+  (change)="onSelectChange()"
   class="border w-[60%] h-10 border-gray-400 rounded"
   required
 >
   <option value="" disabled selected></option>
-  <option *ngFor="let state of states" [value]="state.sigla">
-    {{ state.nome }}
+  <option *ngFor="let state of states" [value]="state.id">
+    {{ state.sigla }}
   </option>
 </select>

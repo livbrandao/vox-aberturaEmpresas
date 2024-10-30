@@ -34,21 +34,18 @@
         <mat-label class="font-bold text-gray-600"
           >Data de nascimento*</mat-label
         >
-        <mat-form-field appearance="fill" floatLabel="always" class="w-[45%]">
+        <mat-form-field
+          appearance="outline"
+          floatLabel="always"
+          class="max-w-96"
+        >
           <input
             matInput
-            [matDatepicker]="picker"
             required
             placeholder="DD/MM/AAAA"
             [(ngModel)]="company.solicitante.date_nascimento"
-            formControlName="date_nascimento"
-            class="cursor-pointer"
+            name="date_nascimento"
           />
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-card-title class="font-bold text-secondary-dark pb-4"
@@ -81,8 +78,6 @@
             {{ option.value }}
           </mat-radio-button>
         </mat-radio-group>
-
-        >
       </div>
       <div class="flex flex-col w-[50%]">
         <mat-card-title class="font-bold text-secondary-dark pb-4"
