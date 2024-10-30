@@ -1,4 +1,4 @@
-<mat-card class="w-[28rem] flex justify-between" appearance="outlined">
+<mat-card class="flex justify-between" appearance="outlined">
   <mat-card-header>
     <div
       mat-card-avatar
@@ -7,18 +7,18 @@
       <mat-icon>person</mat-icon>
     </div>
     <mat-card-title class="text-sm"> {{ ds_responsavel }}</mat-card-title>
-    <mat-card-subtitle class="text-xs text-gray-600">{{
+    <mat-card-subtitle class="text-xs text-gray-600 mt-8">{{
       ds_nome_fantasia
     }}</mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-actions>
     <button
-      class="flex bg-primary-light rounded p-2 text-white hover:bg-primary-medium"
+      class="flex bg-primary-light items-center rounded px-3 py-1 text-tertiary-light hover:bg-primary-medium mr-4 text-sm"
       mat-button
       (click)="showDetails()"
     >
-      <mat-icon class="mr-2">visibility</mat-icon> Visualizar
+      <mat-icon class="mr-2 text-base">visibility</mat-icon> Visualizar
     </button>
   </mat-card-actions>
 </mat-card>

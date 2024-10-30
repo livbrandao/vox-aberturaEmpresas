@@ -11,13 +11,13 @@ module.exports = {
         },
         secondary: {
           light: "#95c3ec",
-          medium: "#77aba2",
-          dark: "#c3cfd9",
+          medium: "#c3cfd9",
+          dark: "#7c8b99",
         },
         tertiary: {
           light: "#ffffff",
           medium: "#dfe6ed",
-          dark: "#384651",
+          dark: "#4b5c6b",
         },
       },
     },

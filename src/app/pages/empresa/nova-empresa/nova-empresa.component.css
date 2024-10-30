@@ -3,9 +3,12 @@
   box-shadow: none;
   display: flex;
 }
+.mat-mdc-text-field-wrapper {
+  background: none !important;
+}
 
 .mdc-notched-outline {
-  width: 45% !important;
+  width: 60% !important;
   height: 70% !important;
 }
 

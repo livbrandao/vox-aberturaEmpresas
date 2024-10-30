@@ -6,3 +6,7 @@
 .mat-body p {
   margin: 0 0 0 !important;
 }
+
+.mat-mdc-card-subtitle {
+  padding-top: 4px !important;
+}
