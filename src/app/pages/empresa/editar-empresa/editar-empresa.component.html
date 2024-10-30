@@ -50,8 +50,14 @@
             matInput
             required
             placeholder="DD/MM/AAAA"
-            [(ngModel)]="company.solicitante.date_nascimento"
+            [ngModel]="getFormattedDate(company.solicitante.date_nascimento)"
             name="date_nascimento"
+            (ngModelChange)="company.solicitante.date_nascimento = $event"
+            (blur)="
+              company.solicitante.date_nascimento = formatDate(
+                company.solicitante.date_nascimento
+              )
+            "
           />
         </mat-form-field>
 
@@ -151,7 +157,7 @@
         <button
           mat-raised-button
           (click)="saveCompany()"
-          class="bg-primary-light flex justify-center p-2 w-32 text-tertiary-light hover:bg-primary-medium ml-48 rounded items-center m-auto"
+          class="bg-primary-light flex justify-center p-2 w-32 text-tertiary-light hover:bg-primary-medium ml-[16rem] rounded items-center m-auto"
         >
           <mat-icon class="-rotate-45 transform mr-2">send</mat-icon>
           Salvar

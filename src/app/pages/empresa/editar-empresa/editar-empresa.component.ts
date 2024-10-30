@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Empresa } from "../empresa.model";
 import { EmpresaService } from "../empresa.service";
 import { ModalSucessComponent } from "src/app/shared/modal-sucess/modal-sucess.component";
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: "app-editar-empresa",
@@ -44,7 +45,8 @@ export class EditarEmpresaComponent implements OnInit {
     private _editarEmpresaService: EmpresaService,
     private _dialog: MatDialog,
     private _route: Router,
-    private _routeActive: ActivatedRoute
+    private _routeActive: ActivatedRoute,
+    private _datePipe: DatePipe
   ) {}
 
   ngOnInit(): void {
@@ -84,5 +86,14 @@ export class EditarEmpresaComponent implements OnInit {
         console.error("Erro ao carregar dados da empresa:", error);
       }
     );
+  }
+
+  getFormattedDate(date_nascimento: string): string {
+    return this._datePipe.transform(date_nascimento, "dd/MM/yyyy") || "";
+  }
+
+  formatDate(date_nascimento: string): string {
+    const date = new Date(date_nascimento);
+    return this._datePipe.transform(date, "dd/MM/yyyy") || "";
   }
 }

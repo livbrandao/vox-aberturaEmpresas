@@ -26,6 +26,9 @@ import { StateSelectComponent } from "./shared/state-select/state-select.compone
 import { ModalSucessComponent } from "./shared/modal-sucess/modal-sucess.component";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { EditarEmpresaComponent } from "./pages/empresa/editar-empresa/editar-empresa.component";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from "@angular/material/core";
+import { CommonModule, DatePipe } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -56,8 +59,11 @@ import { EditarEmpresaComponent } from "./pages/empresa/editar-empresa/editar-em
     MatRadioModule,
     MatSnackBarModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    CommonModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
