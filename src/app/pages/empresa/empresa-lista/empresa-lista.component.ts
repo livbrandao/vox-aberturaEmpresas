@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Empresa } from "../empresa.model";
-import { EmpresaListaService } from "./empresa-lista.service";
+import { EmpresaService } from "../empresa.service";
 
 @Component({
   selector: "app-empresa-lista",
@@ -11,6 +11,7 @@ export class EmpresaListaComponent {
   empresaData: Empresa[] = [];
 
   selectedDetail: {
+    id: string;
     ds_nome_fantasia: string;
     ds_responsavel: string;
     nu_cpf: string;
@@ -23,7 +24,7 @@ export class EmpresaListaComponent {
     co_numero: string;
   } | null = null;
 
-  constructor(private mockDataService: EmpresaListaService) {}
+  constructor(private mockDataService: EmpresaService) {}
 
   ngOnInit(): void {
     this.mockDataService.getEmpresasData().subscribe((data) => {
@@ -33,6 +34,7 @@ export class EmpresaListaComponent {
 
   onViewDetails(detail: Empresa) {
     this.selectedDetail = {
+      id: detail.id || "",
       ds_nome_fantasia: detail.empresa.ds_nome_fantasia,
       ds_responsavel: detail.solicitante.ds_responsavel,
       nu_cpf: detail.solicitante.nu_cpf,

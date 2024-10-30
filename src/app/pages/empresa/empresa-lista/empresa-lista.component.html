@@ -16,6 +16,7 @@
   <div>
     <app-detail-card
       *ngIf="selectedDetail"
+      [id]="selectedDetail?.id ?? ''"
       [ds_nome_fantasia]="selectedDetail?.ds_nome_fantasia ?? ''"
       [ds_responsavel]="selectedDetail?.ds_responsavel ?? ''"
       [nu_cpf]="selectedDetail?.nu_cpf ?? ''"
