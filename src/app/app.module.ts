@@ -28,7 +28,6 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { EditarEmpresaComponent } from "./pages/empresa/editar-empresa/editar-empresa.component";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
-import { CommonModule, DatePipe } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -61,9 +60,7 @@ import { CommonModule, DatePipe } from "@angular/common";
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    CommonModule,
   ],
-  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

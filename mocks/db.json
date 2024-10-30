@@ -65,6 +65,28 @@
           "co_uf": "45"
         }
       }
+    },
+    {
+      "id": "c7dc",
+      "solicitante": {
+        "ds_responsavel": "José da Silva",
+        "nu_cpf": "65798456121",
+        "date_nascimento": "30/11/1980"
+      },
+      "empresa": {
+        "ds_nome_fantasia": "Vox Tecnologia",
+        "co_entidade_registro": 104305,
+        "co_natureza_juridica": null,
+        "endereco": {
+          "co_cep": "73250045",
+          "ds_logradouro": "Rua tech",
+          "co_numero": "",
+          "ds_complemento": "n/a",
+          "ds_bairro": "Na minha maquina funciona",
+          "ds_municipio": "Brasília",
+          "co_uf": "53"
+        }
+      }
     }
   ],
   "entidade-registro": [
